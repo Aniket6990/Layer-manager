@@ -1,0 +1,73 @@
+{
+  "name": "layer-manager",
+  "version": "1.0.0",
+  "publisher": "Aniket6990",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "vscode": "^1.38.1",
+    "node": ">=16.15.0"
+  },
+  "main": "./build/src/extension.js",
+  "extensionDependencies": [
+    "Aniket6990.layer"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "layermgr-sidebar-view",
+          "title": "Layer Manager",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "layermgr-sidebar-view": [
+        {
+          "type": "webview",
+          "id": "layermgr-sidebar",
+          "name": "Layer-Manager",
+          "icon": "media/icon.svg",
+          "contextualTitle": "Layer-Manager"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "layermgr.layerSol",
+        "category": "Layer-Manager",
+        "title": "Activate Layer sol."
+      }
+    ]
+  },
+  "scripts": {
+    "install:all": "yarn install && cd webview && yarn install",
+    "build:webview": "cd webview && node ./scripts/build-react-no-split.js",
+    "build:all": "yarn run build && cd webview && yarn run build",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -watch -p ./"
+  },
+  "dependencies": {
+    "@types/node": "^18.15.3",
+    "@types/vscode": "^1.76.0",
+    "prettier": "^2.8.4",
+    "typescript": "^5.0.2",
+    "vscode": "^1.1.37"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
