@@ -1,18 +1,38 @@
 {
   "name": "layer-manager",
-  "version": "1.0.0",
-  "publisher": "Aniket6990",
-  "description": "",
-  "keywords": [],
+  "displayName": "Layer",
+  "version": "0.0.1",
+  "publisher": "Chaintown",
+  "description": "Manager extension to activate the Layer packages.",
+  "repository": "https://github.com/Aniket6990/Layer-manager",
+  "categories": [
+    "Debuggers",
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "eth2.0",
+    "remix",
+    "remix ide",
+    "blockchain",
+    "layer",
+    "sol"
+  ],
   "author": "",
   "license": "ISC",
+  "icon": "media/icon.png",
   "engines": {
     "vscode": "^1.38.1",
     "node": ">=16.15.0"
   },
   "main": "./build/src/extension.js",
   "extensionDependencies": [
-    "Aniket6990.layer"
+    "Chaintown.layer"
+  ],
+  "activationEvents": [
+    "*"
   ],
   "contributes": {
     "viewsContainers": {
@@ -51,11 +71,11 @@
     "build": "tsc -p tsconfig.json",
     "watch": "tsc -watch -p ./"
   },
-  "dependencies": {
-    "@types/node": "^18.15.3",
-    "@types/vscode": "^1.76.0",
-    "prettier": "^2.8.4",
-    "typescript": "^5.0.2",
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.38.1",
+    "prettier": "^2.1.2",
+    "typescript": "^4.7.4",
     "vscode": "^1.1.37"
   },
   "browserslist": {
@@ -69,5 +89,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "react-icons": "^4.8.0"
   }
 }

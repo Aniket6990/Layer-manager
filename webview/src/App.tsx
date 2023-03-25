@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { activateLayerSol } from "./configuration/webviewpostmsg";
+import { SiSolidity } from "react-icons/si";
 
 const Container = styled.div`
-  width: 100vw;
-  margin: 10px;
+  width: 100%;
+  margin: 0;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -13,7 +15,6 @@ const Container = styled.div`
   color: var(--vscode-icon-foreground);
   font-size: 14px;
   gap: 20px;
-  overflow: hidden;
 `;
 
 const Button = styled.button`
@@ -40,7 +41,7 @@ const App = () => {
           activateLayerSol();
         }}
       >
-        Solidity project
+        <SiSolidity></SiSolidity> Work with solidity
       </Button>
     </Container>
   );
